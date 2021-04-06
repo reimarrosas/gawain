@@ -4,7 +4,7 @@ import { BrowserRouter as Router } from "react-router-dom";
 import NavRouters from "./NavRouters";
 import NavSwitches from "./NavSwitches";
 
-const NavRouting = ({ todos }) => {
+const NavRouting = ({ todos, setTodos }) => {
   const Routes = {
     all: "/",
     finished: "/finished",
@@ -15,7 +15,7 @@ const NavRouting = ({ todos }) => {
     <>
       <Router>
         <NavRouters Routes={Routes} />
-        <NavSwitches todos={todos} Routes={Routes} />
+        <NavSwitches todos={todos} setTodos={setTodos} Routes={Routes} />
       </Router>
     </>
   );

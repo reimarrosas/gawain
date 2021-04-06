@@ -1,49 +1,49 @@
 import React from "react";
 import TodoItems from "./TodoItems";
 
-const AllTodos = ({ todos }) => {
+const AllTodos = ({ todos, setTodos }) => {
   return (
     <ul key="all-todos" className="all-todos">
       {todos.map((todo) => {
-        return <TodoItems key={todo.todoId} todo={todo} />;
+        return <TodoItems key={todo.todoId} todo={todo} todos={todos} setTodos={setTodos} />;
       })}
     </ul>
   );
 };
 
-const FinishedTodos = ({ todos }) => {
+const FinishedTodos = ({ todos, setTodos }) => {
   return (
     <ul key="finished-todos" className="finished-todos">
       {todos
         .filter((todo) => todo.todoCompleted)
         .map((todo) => {
-          return <TodoItems key={todo.todoId} todo={todo} />;
+          return <TodoItems key={todo.todoId} todo={todo} todos={todos} setTodos={setTodos} />;
         })}
     </ul>
   );
 };
 
-const UnfinishedTodos = ({ todos }) => {
+const UnfinishedTodos = ({ todos, setTodos }) => {
   return (
     <ul key="unfinished-todos" className="unfinished-todos">
       {todos
         .filter((todo) => !todo.todoCompleted)
         .map((todo) => {
-          return <TodoItems key={todo.todoId} todo={todo} />;
+          return <TodoItems key={todo.todoId} todo={todo} todos={todos} setTodos={setTodos} />;
         })}
     </ul>
   );
 };
 
-const TodoSections = ({ todos, section }) => {
+const TodoSections = ({ todos, setTodos, section }) => {
   return (
     <main className="todos">
       {section === "all" ? (
-        <AllTodos todos={todos} />
+        <AllTodos setTodos={setTodos} todos={todos} />
       ) : section === "finished" ? (
-        <FinishedTodos todos={todos} />
+        <FinishedTodos setTodos={setTodos} todos={todos} />
       ) : (
-        <UnfinishedTodos todos={todos} />
+        <UnfinishedTodos setTodos={setTodos} todos={todos} />
       )}
     </main>
   );

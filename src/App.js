@@ -10,10 +10,7 @@ function App() {
     <div className="App">
       <h1>Hello, World!</h1>
       <CreateTodoForm todos={todos} setTodos={setTodos} />
-      <NavRouting todos={todos} />
-      {console.log(todos)}{" "}
-      {console.log(todos.filter((todo) => todo.todoCompleted))}
-      {console.log(todos.filter((todo) => !todo.todoCompleted))}
+      <NavRouting todos={todos} setTodos={setTodos} />
     </div>
   );
 }
