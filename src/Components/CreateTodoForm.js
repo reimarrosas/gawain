@@ -2,13 +2,13 @@ import React, { useState } from "react";
 import { CgAddR } from "react-icons/cg";
 import { nanoid } from "nanoid";
 
-const CreateTodo = (props) => {
+const CreateTodo = ({ todos, setTodos }) => {
   const [inputVal, setInputVal] = useState("");
 
   const handleFormSubmit = (event) => {
     event.preventDefault();
-    props.setTodos(
-      props.todos.concat([
+    setTodos(
+      todos.concat([
         {
           todoContent: inputVal,
           todoId: nanoid(8),
