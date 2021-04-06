@@ -6,7 +6,7 @@ const NavSwitches = ({ todos, Routes }) => {
   return (
     <>
       <Switch>
-        <Route path={Routes.all}>
+        <Route exact path={Routes.all}>
           <TodoSections todos={todos} section="all" />
         </Route>
         <Route path={Routes.finished}>
