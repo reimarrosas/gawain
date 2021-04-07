@@ -8,7 +8,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Hello, World!</h1>
+      <h1 className="app-title">Gawain: A Todo List</h1>
       <CreateTodoForm todos={todos} setTodos={setTodos} />
       <NavRouting todos={todos} setTodos={setTodos} />
     </div>

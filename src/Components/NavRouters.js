@@ -6,14 +6,14 @@ const NavRouters = ({ Routes }) => {
     <>
       <nav className="nav-routing">
         <ul className="nav-routing__links">
-          <li className="nav-routing__link">
-            <NavLink activeClassName="active-route" to={Routes.all}>All</NavLink>
+          <li>
+            <NavLink className="nav-routing__link" exact activeClassName="active-route" to={Routes.all}>All</NavLink>
           </li>
-          <li className="nav-routing__link">
-            <NavLink activeClassName="active-route" to={Routes.finished}>Finished</NavLink>
+          <li>
+            <NavLink className="nav-routing__link" activeClassName="active-route" to={Routes.finished}>Finished</NavLink>
           </li>
-          <li className="nav-routing__link">
-            <NavLink activeClassName="active-route" to={Routes.unfinished}>Unfinished</NavLink>
+          <li>
+            <NavLink className="nav-routing__link" activeClassName="active-route" to={Routes.unfinished}>Unfinished</NavLink>
           </li>
         </ul>
       </nav>

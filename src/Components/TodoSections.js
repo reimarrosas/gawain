@@ -3,7 +3,7 @@ import TodoItems from "./TodoItems";
 
 const AllTodos = ({ todos, setTodos }) => {
   return (
-    <ul key="all-todos" className="all-todos">
+    <ul key="all-todos" className="todos all-todos">
       {todos.map((todo) => {
         return <TodoItems key={todo.todoId} todo={todo} todos={todos} setTodos={setTodos} />;
       })}
@@ -13,7 +13,7 @@ const AllTodos = ({ todos, setTodos }) => {
 
 const FinishedTodos = ({ todos, setTodos }) => {
   return (
-    <ul key="finished-todos" className="finished-todos">
+    <ul key="finished-todos" className="todos finished-todos">
       {todos
         .filter((todo) => todo.todoCompleted)
         .map((todo) => {
@@ -25,7 +25,7 @@ const FinishedTodos = ({ todos, setTodos }) => {
 
 const UnfinishedTodos = ({ todos, setTodos }) => {
   return (
-    <ul key="unfinished-todos" className="unfinished-todos">
+    <ul key="unfinished-todos" className="todos unfinished-todos">
       {todos
         .filter((todo) => !todo.todoCompleted)
         .map((todo) => {
@@ -37,7 +37,7 @@ const UnfinishedTodos = ({ todos, setTodos }) => {
 
 const TodoSections = ({ todos, setTodos, section }) => {
   return (
-    <main className="todos">
+    <main>
       {section === "all" ? (
         <AllTodos setTodos={setTodos} todos={todos} />
       ) : section === "finished" ? (

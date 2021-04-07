@@ -1,5 +1,5 @@
 import React from "react";
-import { AiOutlineDelete } from "react-icons/ai";
+import { CgRemoveR } from "react-icons/cg";
 
 const TodoItems = ({ todo, todos, setTodos }) => {
   const handleDelete = (updatedTodo, todoList) => {
@@ -27,9 +27,11 @@ const TodoItems = ({ todo, todos, setTodos }) => {
   }
   
   return (
-    <li onClick={handleDelegate} className="todos__list-item">
+    <li onClick={handleDelegate} className={`todos__list-item${todo.todoCompleted ? " todo-completed" : ""}`}>
       <span className={`todos__todo-content${todo.todoCompleted ? " todo-completed" : ""}`}>{todo.todoContent}</span>
-      <AiOutlineDelete />
+      <button class="btn btn--delete">
+        <CgRemoveR className="todos__icon" />
+      </button>
     </li>
   );
 };

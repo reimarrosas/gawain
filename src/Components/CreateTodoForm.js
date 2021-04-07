@@ -27,13 +27,15 @@ const CreateTodo = ({ todos, setTodos }) => {
     <form className="create-todo" onSubmit={handleFormSubmit}>
       <input
         onChange={handleInputs}
+        className="create-todo__input"
         value={inputVal}
         type="text"
         id="input-todo"
         aria-label="Input Todos"
+        autoComplete="off"
       />
-      <button className="btn btn-create" type="submit">
-        <CgAddR />
+      <button className="btn btn--create" type="submit">
+        <CgAddR className="create-todo__icon" />
       </button>
     </form>
   );
