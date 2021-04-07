@@ -1,0 +1,166 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;900&display=swap");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-size: 1.2rem;
+  font-family: "Raleway", sans-serif;
+}
+
+ul {
+  list-style: none;
+}
+
+body {
+  background-color: #ebebeb;
+}
+
+.App {
+  width: clamp(320px, 60%, 800px);
+  margin: 0 auto;
+  text-align: center;
+  padding: 1rem 0.2rem;
+  min-height: 100vh;
+  background-color: #fff;
+}
+
+.app-title {
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: #111d2e;
+}
+
+.create-todo {
+  width: max(310px, 50%);
+  display: flex;
+  justify-content: center;
+  margin: 0.75rem auto;
+}
+
+.create-todo__input {
+  border: none;
+  min-width: 0;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-right: none;
+  padding: 0.5em;
+}
+
+.create-todo__input:focus {
+  outline: none;
+}
+
+.create-todo__icon {
+  color: #4fc04f;
+  border-radius: 5px;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background-color: inherit;
+  cursor: pointer;
+}
+
+.btn--create {
+  border: 1px solid #ccc;
+  border-left: none;
+  padding: 0.3em;
+}
+
+.btn:focus,
+.btn:active {
+  outline: none;
+}
+
+.nav-routing__links {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.nav-routing__link {
+  text-decoration: none;
+  position: relative;
+}
+
+.nav-routing__link::before {
+  position: absolute;
+  content: "";
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 100%;
+  background-color: black;
+
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 250ms ease-in-out;
+}
+
+.nav-routing__link:hover::before {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.nav-routing__link,
+.nav-routing__link:focus,
+.nav-routing__link:active {
+  color: inherit;
+}
+
+.active-route {
+  position: relative;
+}
+
+.active-route::after {
+  position: absolute;
+  content: "";
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background-color: black;
+}
+
+.todos {
+  margin: 1.5rem auto;
+}
+
+.todos__list-item {
+  border: 1px solid #2b2b2b;
+  border-bottom: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: max(310px, 80%);
+  margin: 0 auto;
+  padding: 1em 0.8em;
+  cursor: pointer;
+  transition: text-decoration 250ms, background-color 250ms;
+}
+
+.todos__list-item:last-child {
+  border-bottom: 1px solid #2b2b2b;
+}
+
+.todos__todo-content {
+  text-align: left;
+}
+
+.todos__icon {
+  color: #fb4f4f;
+}
+
+.btn--delete {
+  cursor: pointer;
+}
+
+.todo-completed {
+  text-decoration: line-through;
+  background-color: #ebebeb;
+}
