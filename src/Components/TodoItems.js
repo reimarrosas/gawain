@@ -3,7 +3,6 @@ import { AiOutlineDelete } from "react-icons/ai";
 
 const TodoItems = ({ todo, todos, setTodos }) => {
   const handleDelete = (updatedTodo, todoList) => {
-    console.log(todoList);
     return todoList.filter(todoToEdit => !Object.is(updatedTodo, todoToEdit));
   }
 
@@ -12,13 +11,12 @@ const TodoItems = ({ todo, todos, setTodos }) => {
       if (Object.is(todoToEdit, updatedTodo)) {
         todoToEdit.todoCompleted = !todoToEdit.todoCompleted;
       }
-      return todo;
+      return todoToEdit;
     })
   }
 
   const handleDelegate = (e) => {
     let updatedTodos;
-    console.log(todos);
     if (e.target.tagName === "svg") {
       updatedTodos = handleDelete(todo, todos);
     } else {
@@ -30,8 +28,8 @@ const TodoItems = ({ todo, todos, setTodos }) => {
   
   return (
     <li onClick={handleDelegate} className="todos__list-item">
-      <span className={`todos__todo-content${todo.todoComplete ? " todo-complete" : ""}`}>{todo.todoContent}</span>
-      <AiOutlineDelete onClick={handleDelete} />
+      <span className={`todos__todo-content${todo.todoCompleted ? " todo-completed" : ""}`}>{todo.todoContent}</span>
+      <AiOutlineDelete />
     </li>
   );
 };
