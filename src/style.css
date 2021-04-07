@@ -18,6 +18,40 @@ body {
   background-color: #ebebeb;
 }
 
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background-color: inherit;
+  cursor: pointer;
+}
+
+.btn:focus,
+.btn:active {
+  outline: none;
+}
+
+.btn--create {
+  border: 1px solid #ccc;
+  border-left: none;
+  padding: 0.3em;
+}
+
+.btn--delete {
+  cursor: pointer;
+}
+
+.btn--clear {
+  margin-left: auto;
+  background-color: #6cc0e5;
+  padding: 0.5em 0.75em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+}
+
 #root {
   display: flex;
   align-items: center;
@@ -66,27 +100,6 @@ body {
   color: #4fc04f;
   border-radius: 5px;
 }
-
-.btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: none;
-  background-color: inherit;
-  cursor: pointer;
-}
-
-.btn--create {
-  border: 1px solid #ccc;
-  border-left: none;
-  padding: 0.3em;
-}
-
-.btn:focus,
-.btn:active {
-  outline: none;
-}
-
 .nav-routing__links {
   display: flex;
   justify-content: space-evenly;
@@ -136,6 +149,11 @@ body {
   background-color: black;
 }
 
+main {
+  width: max(310px, 80%);
+  margin: 0 auto;
+}
+
 .todos {
   margin: 1.5rem auto;
 }
@@ -146,8 +164,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: max(310px, 80%);
-  margin: 0 auto;
   padding: 1em 0.8em;
   cursor: pointer;
   transition: text-decoration 250ms, background-color 250ms;
@@ -163,10 +179,6 @@ body {
 
 .todos__icon {
   color: #fb4f4f;
-}
-
-.btn--delete {
-  cursor: pointer;
 }
 
 .todo-completed {

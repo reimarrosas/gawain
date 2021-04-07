@@ -1,5 +1,6 @@
 import React from "react";
 import TodoItems from "./TodoItems";
+import { CgRedo } from "react-icons/cg";
 
 const AllTodos = ({ todos, setTodos }) => {
   return (
@@ -36,6 +37,10 @@ const UnfinishedTodos = ({ todos, setTodos }) => {
 };
 
 const TodoSections = ({ todos, setTodos, section }) => {
+  const handleClear = () => {
+    setTodos([]);
+  }
+  
   return (
     <main>
       {section === "all" ? (
@@ -45,6 +50,12 @@ const TodoSections = ({ todos, setTodos, section }) => {
       ) : (
         <UnfinishedTodos setTodos={setTodos} todos={todos} />
       )}
+      {
+        todos.length !== 0 &&
+        <button onClick={handleClear} className="btn btn--clear">
+          <span>Clear</span> <CgRedo />
+        </button>
+      }
     </main>
   );
 };
