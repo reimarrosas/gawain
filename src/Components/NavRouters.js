@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const NavRouters = ({ Routes }) => {
   return (
@@ -7,13 +7,13 @@ const NavRouters = ({ Routes }) => {
       <nav className="nav-routing">
         <ul className="nav-routing__links">
           <li className="nav-routing__link">
-            <Link to={Routes.all}>All</Link>
+            <NavLink activeClassName="active-route" to={Routes.all}>All</NavLink>
           </li>
           <li className="nav-routing__link">
-            <Link to={Routes.finished}>Finished</Link>
+            <NavLink activeClassName="active-route" to={Routes.finished}>Finished</NavLink>
           </li>
           <li className="nav-routing__link">
-            <Link to={Routes.unfinished}>Unfinished</Link>
+            <NavLink activeClassName="active-route" to={Routes.unfinished}>Unfinished</NavLink>
           </li>
         </ul>
       </nav>
