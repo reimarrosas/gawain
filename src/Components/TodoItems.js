@@ -29,7 +29,7 @@ const TodoItems = ({ todo, todos, setTodos }) => {
   return (
     <li onClick={handleDelegate} className={`todos__list-item${todo.todoCompleted ? " todo-completed" : ""}`}>
       <span className={`todos__todo-content${todo.todoCompleted ? " todo-completed" : ""}`}>{todo.todoContent}</span>
-      <button class="btn btn--delete">
+      <button className="btn btn--delete">
         <CgRemoveR className="todos__icon" />
       </button>
     </li>

@@ -7,17 +7,19 @@ const CreateTodo = ({ todos, setTodos }) => {
 
   const handleFormSubmit = (event) => {
     event.preventDefault();
-    setTodos(
-      todos.concat([
-        {
-          todoContent: inputVal,
-          todoId: nanoid(8),
-          todoCompleted: false,
-        },
-      ])
-    );
+    if (validateInput(inputVal)) {
+      setTodos(appendInput(todos, {
+        todoContent: inputVal,
+        todoId: nanoid(8),
+        todoCompleted: false,
+      }))
+    }
     setInputVal("");
   };
+
+  const validateInput = (input) => /[^\s*]/g.test(input);
+
+  const appendInput = (baseList, input) => [...baseList, input];
 
   const handleInputs = (event) => {
     setInputVal(event.target.value);
