@@ -89,6 +89,8 @@ body {
   border: 1px solid #ccc;
   border-right: none;
   padding: 0.5em;
+  box-shadow: none;
+  border-radius: 0;
 }
 
 .create-todo__input:focus {
@@ -159,7 +161,6 @@ main {
 
 .todos__list-item {
   border: 1px solid #2b2b2b;
-  border-bottom: none;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -168,8 +169,8 @@ main {
   transition: text-decoration 250ms, background-color 250ms;
 }
 
-.todos__list-item:last-child {
-  border-bottom: 1px solid #2b2b2b;
+.todos__list-item + .todos__list-item {
+  margin-top: 0.5em;
 }
 
 .todos__todo-content {
