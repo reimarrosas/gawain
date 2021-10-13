@@ -167,6 +167,7 @@ main {
   padding: 1em 0.8em;
   cursor: pointer;
   transition: text-decoration 250ms, background-color 250ms;
+  overflow: hidden;
 }
 
 .todos__list-item + .todos__list-item {
